@@ -3,10 +3,10 @@ const router = express.Router();
 
 // Importar rotas
 const loginRoute = require('./login');
-const checkEmailRoute = require('./checkEmail');
+const registerRoute = require('./register');
 
 // Usar rotas
 router.use(loginRoute);
-router.use(checkEmailRoute);
+router.use(registerRoute);
 
 module.exports = router;

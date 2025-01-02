@@ -22,7 +22,7 @@
                 <!-- SVG do ícone de usuário -->
                 <img src="/svg/user.svg" alt="User Icon">
               </div>
-              <input type="text" placeholder="Nome Completo"/>
+              <input type="text" id="register-name" placeholder="Nome Completo"/>
             </div>
             <div class="input-container">
               <div class="icon">
@@ -40,10 +40,10 @@
               <input type="text" id="register-email" placeholder="E-mail"/>
               <small id="email-error" class="error-message"></small>
             </div>
-            <button type="submit">CRIAR</button>
+            <button type="submit" id="register-submit">CRIAR</button>
             <p class="message">Já tem uma conta? <a href="#" id="show-login">Faça Login</a></p>
           </form>
-          <form class="login-form">
+          <form class="login-form" id="login-form">
             <div class="input-container">
               <div class="icon">
                 <!-- SVG do ícone de e-mail -->
@@ -64,6 +64,7 @@
         </div>
       </div>
     <script src="/js/toggleForms.js"></script>
+    <script src="/js/register.js"></script>
     <script src="/js/validation.js"></script>
 </body>
 </html>

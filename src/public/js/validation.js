@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     registerForm.addEventListener('submit', function(e) {
       e.preventDefault();
+
       let valid = true;
   
       // Verificação da senha
