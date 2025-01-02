@@ -18,21 +18,18 @@
   margin-bottom: 15px;
 }
 .icon {
-  width: 30px;
-  height: 30px;
+  width: 63px;
+  height: 47px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #1f1f1f;
-  border-radius: 4px;
-  margin-right: 10px;
-  fill: #ccc;
+  margin: 0 0 15px;
 }
 
 .icon img {
   width: 20px;
   height: 20px;
-  fill: #ccc;
 }
 
 .form input {
@@ -111,7 +108,7 @@
 body {
   background: #000000; /* fallback for old browsers */
   background: rgb(31, 30, 30);
-  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%);
+  background: linear-gradient(90deg, rgb(34, 34, 34) 0%, rgb(0, 0, 0) 50%);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
