@@ -1,4 +1,3 @@
-// Função para verificar se o token JWT é válido
 function isTokenValid(token) {
     if (!token) return false;
   
@@ -58,7 +57,7 @@ function isTokenValid(token) {
           // Após o login bem-sucedido, redireciona o usuário
           window.location.href = 'protected_page.html'; // Ou para a página desejada
         } else {
-          alert('Erro ao fazer login');
+          alert('Erro ao fazer login! Nome ou senha errados...');
         }
       });
     }

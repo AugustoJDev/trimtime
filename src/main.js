@@ -1,10 +1,7 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
+const path = require('path');
 const app = express();
-const port = 3000;
 
-// Dados fictícios de usuários
 const users = [
   { username: 'jonathan', password: 'lindo' } // Senha: 'password'
 ];
@@ -12,11 +9,12 @@ const users = [
 // Middleware para permitir o uso de JSON no corpo da requisição
 app.use(express.json());
 
+// Servir arquivos estáticos da pasta 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Rota para servir o index.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  res.sendFile(path.join(__dirname, 'views', 'home.html'));
 });
 
 // Rota de login
@@ -24,25 +22,16 @@ app.post('/login', (req, res) => {
   const { username, password } = req.body;
   
   // Verificar se o usuário existe
-  const user = users.find(u => u.username === username);
-  
-  if (!user) {
-    return res.status(400).send('Usuário não encontrado');
+  const user = users.find(u => u.username === username && u.password === password);
+  if (user) {
+    res.status(200).send('Login bem-sucedido');
+  } else {
+    res.status(401).send('Credenciais inválidas');
   }
-
-  // Comparar a senha com o hash
-  bcrypt.compare(password, user.password, (err, result) => {
-    if (result) {
-      // Gerar o token
-      const token = jwt.sign({ username: user.username }, 'secreta_chave', { expiresIn: '1h' });
-      res.json({ token });
-    } else {
-      res.status(400).send('Senha incorreta');
-    }
-  });
 });
 
 // Iniciar o servidor
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
