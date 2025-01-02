@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - TrimTime</title>
+  <title>Login</title>
   <script src="/js/auth.js" defer></script>
   <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <h2>TrimTime</h2>
+        </div>
+        <image src="/svg/barber.svg" alt="Logo" class="logo">
+    </div>
     <div class="login-page">
         <div class="form">
-          <form class="register-form">
+          <form class="register-form" style="display: none;">
             <div class="input-container">
               <div class="icon">
                 <!-- SVG do ícone de usuário -->
@@ -23,38 +29,41 @@
                 <!-- SVG do ícone de senha -->
                 <img src="/svg/pass.svg" alt="Password Icon">
               </div>
-              <input type="password" placeholder="Senha"/>
+              <input type="password" id="register-password" placeholder="Senha"/>
+              <small id="password-error" class="error-message"></small>
             </div>
             <div class="input-container">
               <div class="icon">
                 <!-- SVG do ícone de e-mail -->
                 <img src="/svg/mail.svg" alt="Email Icon">
               </div>
-              <input type="text" placeholder="E-mail"/>
+              <input type="text" id="register-email" placeholder="E-mail"/>
+              <small id="email-error" class="error-message"></small>
             </div>
-            <button>CRIAR</button>
+            <button type="submit">CRIAR</button>
             <p class="message">Já tem uma conta? <a href="#" id="show-login">Faça Login</a></p>
           </form>
           <form class="login-form">
             <div class="input-container">
               <div class="icon">
-                <!-- SVG do ícone de usuário -->
+                <!-- SVG do ícone de e-mail -->
                 <img src="/svg/mail.svg" alt="E-mail Icon">
               </div>
-              <input type="text" placeholder="E-mail"/>
+              <input type="text" id="login-email" placeholder="E-mail"/>
             </div>
             <div class="input-container">
               <div class="icon">
                 <!-- SVG do ícone de senha -->
                 <img src="/svg/pass.svg" alt="Password Icon">
               </div>
-              <input type="password" placeholder="Senha"/>
+              <input type="password" id="login-password" placeholder="Senha"/>
             </div>
-            <button>login</button>
-            <p class="message">Não tem login? <a href="#" id="show-register">Crie uma conta</a></p>
+            <button type="submit">LOGIN</button>
+            <p class="message">Não tem uma conta? <a href="#" id="show-register">Crie uma conta</a></p>
           </form>
         </div>
       </div>
     <script src="/js/toggleForms.js"></script>
+    <script src="/js/validation.js"></script>
 </body>
 </html>

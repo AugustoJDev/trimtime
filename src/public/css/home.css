@@ -1,4 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@font-face {
+  font-family: 'headerFont';
+  src: url('Jamesoon-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .login-page {
   width: 360px;
@@ -112,4 +118,20 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto -50px;
+  display: block;
+}
+
+.header {
+  font-family: 'headerFont';
+  color: #ff3300;
+  font-size: 45px;
+  font-weight: 300;
+  margin: 0 0 -50px;
+  text-align: center;
 }
