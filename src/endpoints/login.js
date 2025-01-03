@@ -8,7 +8,11 @@ const secretKey = "trimtime-tokens"; // Chave secreta para gerar o token
 
 const { firebaseConfig } = require('../secrets/firebaseConfig');
 
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app(); // if already initialized, use that one
+}
 const db = firebase.firestore();
 
 // Rota de login
@@ -30,14 +34,13 @@ router.post('/login', async (req, res) => {
       // Gerar um token JWT
       const token = jwt.sign(user, secretKey, { expiresIn: '24h' });
 
-      res.json({ token });
-      res.status(200).send('Login bem-sucedido');
+      return res.json({ token }); // Enviar a resposta e retornar
     } else {
-      res.status(401).send('Credenciais inválidas');
+      return res.status(401).send('Credenciais inválidas');
     }
   } catch (error) {
     console.error('Erro ao fazer login:', error);
-    res.status(500).send('Erro ao fazer login');
+    return res.status(500).send('Erro ao fazer login');
   }
 });
 

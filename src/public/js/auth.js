@@ -1,20 +1,20 @@
 function isTokenValid(token) {
-    if (!token) return false;
-  
-    try {
-      // Decodificando o token (sem verificar a assinatura aqui)
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      
-      // Checando a expiração (se o token tiver um campo 'exp')
-      const isExpired = payload.exp && payload.exp < Math.floor(Date.now() / 1000);
-      
-      return !isExpired;
-    } catch (e) {
-      return false;
-    }
+  if (!token) return false;
+
+  try {
+    // Decodificando o token (sem verificar a assinatura aqui)
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    
+    // Checando a expiração (se o token tiver um campo 'exp')
+    const isExpired = payload.exp && payload.exp < Math.floor(Date.now() / 1000);
+    
+    return !isExpired;
+  } catch (e) {
+    return false;
   }
-  
-  // Função para checar o status de login e redirecionar conforme necessário
+}
+
+// Função para checar o status de login e redirecionar conforme necessário
 function checkLogin() {
   const token = localStorage.getItem('token');
 
@@ -25,7 +25,7 @@ function checkLogin() {
     }); // Espera 2 segundos antes do redirecionamento
   } else {
     // Se o token não for válido ou não existir, exibe a página de login
-    document.getElementById('loginPage')
+    document.getElementById('loginPage').style.display = 'block';
     setupLoginForm();
   }
 }

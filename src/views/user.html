@@ -4,11 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Painel do Usuário</title>
-  
-  <!-- Incluindo o script auth.js -->
+  <link rel="stylesheet" href="/css/user.css">
+  <script src="/js/user.js" defer></script>
 </head>
 <body>
-    <h2>Bem-vindo! Você está autenticado.</h2>
-    <p>Você foi redirecionado para a página protegida.</p>
+  <div class="container">
+    <div class="sidebar" id="sidebar">
+      <button class="toggle-btn" id="toggle-btn">☰</button>
+      <ul class="menu">
+        <li class="menu-item" data-content="agendar-corte">Agendar Corte</li>
+        <li class="menu-item" data-content="datas-marcadas">Datas Marcadas</li>
+        <li class="menu-item" data-content="historico-pagamentos">Histórico de Pagamentos</li>
+        <li class="menu-item" data-content="contato">Contato</li>
+        <li class="menu-item" data-content="redes-sociais">Redes Sociais</li>
+      </ul>
+    </div>
+    <div class="content" id="content">
+      <div id="agendar-corte" class="content-section active">
+        <h2>Agendar Corte</h2>
+        <p>Conteúdo para agendar corte.</p>
+      </div>
+      <div id="datas-marcadas" class="content-section">
+        <h2>Datas Marcadas</h2>
+        <p>Conteúdo para datas marcadas.</p>
+      </div>
+      <div id="historico-pagamentos" class="content-section">
+        <h2>Histórico de Pagamentos</h2>
+        <p>Conteúdo para histórico de pagamentos.</p>
+      </div>
+      <div id="contato" class="content-section">
+        <h2>Contato</h2>
+        <p>Conteúdo para contato.</p>
+      </div>
+      <div id="redes-sociais" class="content-section">
+        <h2>Redes Sociais</h2>
+        <p>Conteúdo para redes sociais.</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

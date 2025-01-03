@@ -135,3 +135,11 @@ body {
   margin: 0 0 -50px;
   text-align: center;
 }
+
+.error-message {
+  color: red; /* Cor vermelha para a mensagem de erro */
+  font-size: 12px;
+  position: absolute;
+  display: block;
+  margin-top: 60px;
+}
